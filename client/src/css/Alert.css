@@ -1,0 +1,6 @@
+.alert{
+    position: absolute;
+    width: 100%;
+    transition: .28s ease-in-out;
+    z-index: 1;
+  }
