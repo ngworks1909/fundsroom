@@ -1,6 +1,6 @@
-# FundsRoom
+# Refunds Tracking
 
-Welcome to FundsRoom! This is a project for managing finances and expenses.
+Welcome to FundsRoom! This is a project for tracking refunds.
 
 ## Installation
 
