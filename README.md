@@ -33,17 +33,15 @@ Follow these steps to set up FundsRoom on your local machine:
     ```
 5. **Start the server:**
 
-    In the `backend` folder, run:
-
     ```bash
+    cd ../backend
     npm start
     ```
 
 6. **Start the client:**
 
-    In the `client` folder, run:
-
     ```bash
+    cd ../client
     npm start
     ```
 
