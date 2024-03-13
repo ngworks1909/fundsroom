@@ -43,6 +43,10 @@ Here are my skills
 - **ORM:**
   - Prisma
 
+## Note
+External database configuration are not required to run the application.
+I had used prisma accelerate for connection pooling and the application is deployed along with the database url.
+
 ## Installation
 
 Follow these steps to set up FundsRoom on your local machine:
