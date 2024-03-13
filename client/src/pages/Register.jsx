@@ -57,7 +57,7 @@ export default function Register() {
                   <input type="password"  className="form-control" id="floatingPassword" placeholder="Password" minLength={5} required/>
                   <label  htmlFor="floatingPassword">Password</label>
                 </div>
-                <div className="form-floating">
+                <div className="form-floating mt-3">
                   <input type="password"  className="form-control" id="floatingMobile" placeholder="Mobile" minLength={10} maxLength={10} required/>
                   <label  htmlFor="floatingPassword">Mobile</label>
                 </div>

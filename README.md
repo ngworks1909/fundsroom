@@ -2,6 +2,23 @@
 
 Welcome to FundsRoom! This is a project for tracking refunds.
 
+## Technologies Used
+
+- **Frontend:**
+  - React.js
+  - HTML5
+  - CSS3
+  - JavaScript
+
+- **Backend:**
+  - Cloudflare
+  - Hono
+  - Typescript
+  - PostgreSQL (Aiven)
+
+- **ORM:**
+  - Prisma
+
 ## Installation
 
 Follow these steps to set up FundsRoom on your local machine:
