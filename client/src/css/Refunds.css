@@ -1,5 +1,8 @@
 .refunds{
+    height: calc(100dvh - 60px);
     margin: 20px auto 0 auto;
     width: 90%;
     gap: 35px;
+    overflow: hidden;
+    overflow-y: scroll;
 }
