@@ -29,7 +29,7 @@ Here are my skills
 
 ## Visit My Portfolio
 
-<a href = "https://ngworks-portfolio.vercel.app">Click here to vist my portfolio</a>
+<span>Explore my works <a href = "https://ngworks-portfolio.vercel.app">Click here</a></span>
 
 ## Technologies Used
 
@@ -57,7 +57,7 @@ I had used prisma accelerate for connection pooling.The application is deployed 
 
 ## Installation
 
-Follow these steps to set up FundsRoom on your local machine:
+Follow these steps to set up Refunds Tracker on your local machine:
 
 1. **Clone the repository:**
 
