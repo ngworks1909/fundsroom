@@ -52,8 +52,8 @@ Here are my skills
   - Prisma
 
 ## Note
-External database configuration are not required to run the application.
-I had used prisma accelerate for connection pooling and the application is deployed along with the database url.
+External database configuration is not required to run this application.
+I had used prisma accelerate for connection pooling.The application is deployed along with the database url.
 
 ## Installation
 
