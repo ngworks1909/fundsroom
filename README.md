@@ -82,7 +82,7 @@ Follow these steps to set up Refunds Tracker on your local machine:
 4. **Install client dependencies:**
 
     ```bash
-    cd ../client
+    cd ../frontend
     npm install
     ```
 5. **Start the server:**
@@ -95,7 +95,7 @@ Follow these steps to set up Refunds Tracker on your local machine:
 6. **Start the client:**
 
     ```bash
-    cd ../client
+    cd ../frontend
     npm start
     ```
 
