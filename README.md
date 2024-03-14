@@ -28,7 +28,7 @@ Here are my skills
 </div>
 
 ## Visit My Portfolio
-<a href = "https://ngworks-portfolio.vercel.app">https://ngworks-portfolio.vercel.app</a>
+<a href = "https://ngworks-portfolio.vercel.app">Click here to vist my portfolio</a>
 
 ## Technologies Used
 
