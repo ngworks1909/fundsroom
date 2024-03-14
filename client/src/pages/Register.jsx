@@ -2,15 +2,22 @@ import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import Alert from '../components/Alert';
 import '../css/Login.css';
+import { useRecoilValue, useSetRecoilState } from 'recoil';
+import { UserState } from '../states/UserState';
 
 
 export default function Register() {
   const navigate = useNavigate();
   const [err,setErr] = useState(false);
   const [msg,setMsg] = useState('');
+  const loading = useRecoilValue(UserState);
+  const setLoading = useSetRecoilState(UserState);
+
+
   
   const handleRegister= async (e) =>{
         e.preventDefault();
+        setLoading(true);
         const username = e.target[0].value;
         const email = e.target[1].value;
         const password = e.target[2].value;
@@ -37,10 +44,12 @@ export default function Register() {
             setMsg('');
           }, 3000);
         }
+        setLoading(false);
   }
   return (
     <>
-    {err && <Alert type={'danger'} message={msg}/>} 
+     {loading ? <span>Loading...</span> : <>
+     {err && <Alert type={'danger'} message={msg}/>} 
      <div className="container-2 display-flex align-center justify-center">
        <div className="login display-flex align-center flex-column">
            <h2 className='login-h2'>Register</h2>
@@ -66,7 +75,7 @@ export default function Register() {
          
            <span className='not-user display-flex'>Already a user?<Link to="/login">Login</Link></span>
        </div>
-     </div>
+     </div></>}
     </>
   )
 }
