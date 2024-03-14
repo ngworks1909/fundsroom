@@ -2,12 +2,10 @@
 
 Welcome to FundsRoom! This is a project for tracking refunds.
 
+
 ## My Skills
 
 Here are my skills
-
-## Visit My Portfolio
-<a href = "https://ngworks-portfolio.vercel.app">https://ngworks-portfolio.vercel.app</a>
 
 <div>
   <img src="https://github.com/devicons/devicon/blob/master/icons/python/python-original-wordmark.svg" title="Python" alt="Python" width="40" height="40"/>&nbsp;
@@ -28,6 +26,9 @@ Here are my skills
   <img src="https://github.com/devicons/devicon/blob/master/icons/prisma/prisma-original-wordmark.svg" title="Prisma" alt="Prisma" width="40" height="40"/>&nbsp;
   <img src="https://github.com/devicons/devicon/blob/master/icons/git/git-original-wordmark.svg" title="Git" alt="Git" width="40" height="40"/>
 </div>
+
+## Visit My Portfolio
+<a href = "https://ngworks-portfolio.vercel.app">https://ngworks-portfolio.vercel.app</a>
 
 ## Technologies Used
 
