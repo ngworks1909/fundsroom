@@ -1,8 +1,14 @@
 .user-list{
-    height: calc(100dvh - 60px);
-    margin: 20px auto 0 auto;
     width: 90%;
     gap: 35px;
     overflow: hidden;
     overflow-y: scroll;
+}
+.user-list-wrapper{
+    position: relative;
+    top: 60px;
+    height: calc(100dvh - 60px);
+    padding: 20px 0 10px 0;
+    display: flex;
+    justify-content: center;
 }

@@ -29,7 +29,8 @@ export default function UserList() {
         })
     }, [setLoading])
   return (
-    <div className='user-list display-flex flex-column'>
+    <div className="user-list-wrapper">
+        <div className='user-list display-flex flex-column'>
         <TypeAnimation sequence={[`Hello ${username} !!!`,2000,""]} speed={30} wrapper="h2" repeat={Infinity} />
         <div className="user-list-seperation display-flex flex-column gap-10">
         <h5>Pay Friends</h5>
@@ -38,6 +39,7 @@ export default function UserList() {
             return <UserItem user = {user}  key={index} />
         })}
         </div>
+    </div>
     </div>
   )
 }

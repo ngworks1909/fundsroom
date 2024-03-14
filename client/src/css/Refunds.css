@@ -1,8 +1,17 @@
 .refunds{
-    height: calc(100dvh - 60px);
-    margin: 20px auto 0 auto;
     width: 90%;
     gap: 35px;
     overflow: hidden;
     overflow-y: scroll;
+}
+.refunds-wrapper{
+    height: calc(100dvh - 60px);
+    position: relative;
+    top: 60px;
+    padding: 20px 0 10px 0;
+    display: flex;
+    justify-content: center;
+}
+.no-refunds{
+    align-self: center;
 }

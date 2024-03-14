@@ -3,6 +3,9 @@
     background-color: rgba(248,249,250, 1);
     box-shadow: 0px 1px 3px rgb(154, 153, 153);
     padding: 0 20px;
+    position: fixed;
+    top: 0;
+    width: 100%;
 }
 .left-block{
     gap: 40px;

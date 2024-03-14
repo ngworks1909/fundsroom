@@ -1,6 +1,8 @@
 .account{
     background-color: #202c33;
     height: calc(100dvh - 60px);
+    position: relative;
+    top: 60px;
 }
 .card{
     height: 250px;

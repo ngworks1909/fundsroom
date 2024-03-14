@@ -24,11 +24,16 @@ export default function Refunds() {
   return (
     <div>
       <Navbar/>
+      <div className="refunds-wrapper">
       <div className="refunds display-flex flex-column">
-        {!loading &&refunds &&  refunds.map((refund, index) => {
+        {!loading && refunds &&  <div className='display-flex flex-column gap-10'>
+          <RefundItem key={"id"} id = {"ID"} amount={"AMOUNT"} status={"STATUS"}/>
+          {refunds.map((refund, index) => {
            return <RefundItem key={index} id = {refund.id} amount={refund.amount} status={refund.status}/>
         })}
+          </div>}
         {!loading && !refunds && <span>No refunds</span>}
+      </div>
       </div>
     </div>
   )

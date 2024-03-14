@@ -2,6 +2,7 @@ import React, { useEffect } from 'react'
 import UserList from '../components/UserList'
 import Navbar from '../components/Navbar'
 import {useNavigate} from 'react-router-dom'
+import '../css/Home.css'
 
 export default function Home() {
   const navigate = useNavigate();
@@ -20,9 +21,11 @@ export default function Home() {
       })
   }, [navigate])
   return (
-    <div>
+    <div className='home'>
       <Navbar/>
+      <div className="place-middle">
       <UserList/>
+      </div>
     </div>
   )
 }
