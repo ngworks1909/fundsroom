@@ -11,6 +11,7 @@ export default function UserList() {
     const loading = useRecoilValue(UserState);
     const setLoading = useSetRecoilState(UserState);
     useEffect(() => {
+        setLoading(true);
         fetch(`https://backend.nithin-kanduru1908.workers.dev/api/auth/getUsers`, {
               method: "GET",
               headers: {

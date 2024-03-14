@@ -34,6 +34,9 @@ Here are my skills
   - CSS3
   - JavaScript
 
+- **State Management:**
+  - Recoil
+
 - **Backend:**
   - Cloudflare
   - Hono
