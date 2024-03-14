@@ -1,16 +1,18 @@
-import React from 'react'
-import '../css/Navbar.css'
-import {Link, useLocation} from 'react-router-dom'
+import React from 'react';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { useSetRecoilState } from 'recoil';
+import '../css/Navbar.css';
 import { LogState } from '../states/LogState';
 
 export default function Navbar() {
   const setLogin = useSetRecoilState(LogState);
+  const navigate = useNavigate()
   const location = useLocation();
   const handleLogout = () =>{
     localStorage.removeItem('token');
     localStorage.removeItem('username');
     setLogin(false);
+    navigate("/");
   }
   return (
     <>
