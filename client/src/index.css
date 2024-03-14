@@ -16,6 +16,10 @@ code {
   font-family: Poppins;
 }
 
+body::-webkit-scrollbar{
+  display: none;
+}
+
 .display-flex{
   display: flex;
 }
