@@ -47,7 +47,7 @@ export default function Login() {
 
   return (
     <>
-      {loading ? <span>Loading...</span>: <>
+      {loading ? <span className='display-flex align-center justify-center loader'>Loading...</span>: <>
       {err && <Alert type={'danger'} message={msg}/>}
        <div className="container-2 display-flex align-center justify-center">
        <div className="signup display-flex align-center flex-column">

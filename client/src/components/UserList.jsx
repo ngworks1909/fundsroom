@@ -10,6 +10,8 @@ export default function UserList() {
     const [userlist, setUserList] = useState([]);
     const loading = useRecoilValue(UserState);
     const setLoading = useSetRecoilState(UserState);
+    const user = localStorage.getItem('username');
+    const username = `${user.charAt(0).toUpperCase()}${user.substring(1)}`
     useEffect(() => {
         setLoading(true);
         fetch(`https://backend.nithin-kanduru1908.workers.dev/api/auth/getUsers`, {
@@ -28,7 +30,7 @@ export default function UserList() {
     }, [setLoading])
   return (
     <div className='user-list display-flex flex-column'>
-        <TypeAnimation sequence={["Hello User",2000,""]} speed={30} wrapper="h2" repeat={Infinity} />
+        <TypeAnimation sequence={[`Hello ${username} !!!`,2000,""]} speed={30} wrapper="h2" repeat={Infinity} />
         <div className="user-list-seperation display-flex flex-column gap-10">
         <h5>Pay Friends</h5>
         {loading && <span>Loading...</span>}

@@ -20,7 +20,7 @@ export default function UserItem({user}) {
          </div>
          <div className="user-left-details display-flex flex-column ">
           <span className='user-username'>{`${user.username.substring(0,1).toUpperCase()}${user.username.substring(1)}`}</span>
-          <span className='user-mobile'>{user.mobile}</span>
+          <span className='user-mobile'>{`${user.mobile.substring(0,2)}XXXXXX${user.mobile.substring(8)}`}</span>
          </div>
       </div>
       <div className="user-right-block">
