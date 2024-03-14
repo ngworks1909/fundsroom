@@ -52,9 +52,9 @@ Here are my skills
   - Prisma
 
 ## Note
-External database configuration is not required to run this application. 
-Prisma Accelerate has been utilized for connection pooling. The application is deployed along with the database URL.
- While I acknowledge that sharing the database URL is not considered a good practice, it can significantly streamline the setup process for you with ease.
+External database configuration is not required to run this application.
+I had used Prisma Accelerate for connection pooling.The application is deployed along with the database URL.
+I am aware that sharing the database URL is not considered a good practice, but it can facilitate the setup process for you with ease.
 
 ## Installation
 
