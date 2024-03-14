@@ -54,6 +54,7 @@ Here are my skills
 ## Note
 External database configuration is not required to run this application.
 I had used prisma accelerate for connection pooling.The application is deployed along with the database url.
+I am aware that sharing the database URL is not considered a good practice, but it can facilitate the setup process for you with ease.
 
 ## Installation
 
