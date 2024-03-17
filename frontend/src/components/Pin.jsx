@@ -46,21 +46,18 @@ export default function Pin() {
     }
   return (
     <div className='pay-wrapper'>
-        <Navbar/>
-        {!loading && <div className="pay display-flex align-center justify-center">
-            <div className="pay-block display-flex justify-center">
-                <div className="pay-container display-flex flex-column gap-1">
-                <input type="text" name="amount" className='tsxnamount' maxLength={4} minLength={4} value={pin} onChange={(e) => {
-                    e.preventDefault();
-                    setPin(e.target.value);
-                }} placeholder='Pin' id="tsxnPin" />
-                <button className='pay-pay-button' onClick={handlePay}>Pay</button>
-                </div>
+    <Navbar/>
+    <div className="pay display-flex align-center justify-center">
+        <div className="pay-block display-flex justify-center">
+            <div className="pay-container display-flex flex-column gap-1">
+            <input type="text" name="amount" className='tsxnamount' maxLength={4} minLength={4} value={pin} onChange={(e) => {
+                e.preventDefault();
+                setPin(e.target.value);
+            }} placeholder='Pin' id="tsxnPin" />
+            <button className={`pay-pay-button ${loading && 'pay-opacity'}`} disabled = {loading} onClick={handlePay}>Pay</button>
             </div>
-        </div>}
-        <div className="display-flex align-center-justify-center">
-           {loading && <span>Please wait...</span>}
         </div>
     </div>
+</div>
   )
 }

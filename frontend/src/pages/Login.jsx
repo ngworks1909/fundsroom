@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
+import { useRecoilValue, useSetRecoilState } from 'recoil';
 import Alert from '../components/Alert';
 import '../css/Login.css';
-import { useRecoilValue, useSetRecoilState } from 'recoil';
 import { LogState } from '../states/LogState';
 import { UserState } from '../states/UserState';
 
@@ -47,7 +47,6 @@ export default function Login() {
 
   return (
     <>
-      {loading ? <span className='display-flex align-center justify-center loader'>Loading...</span>: <>
       {err && <Alert type={'danger'} message={msg}/>}
        <div className="container-2 display-flex align-center justify-center">
        <div className="signup display-flex align-center flex-column">
@@ -62,13 +61,11 @@ export default function Login() {
                   <input type="password" className="form-control" id="floatingPassword" placeholder="Password"/>
                   <label htmlFor="floatingPassword">Password</label>
                 </div>
-                <input type="submit" className="btn btn-primary login-submit"value={"Login"}/>
+                <input type="submit" className={`btn btn-primary login-submit`} disabled = {loading} value={"Login"}/>
            </form>
-           <span className='not-user display-flex'>New user?<Link to="/register">Register</Link></span>
+           {!loading && <span className='not-user display-flex'>New user?<Link to="/register" >Register</Link></span>}
        </div>
      </div>
-      </>  }
-      
     </>
   )
 }
