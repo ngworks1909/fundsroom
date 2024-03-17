@@ -33,6 +33,7 @@ export default function Pin() {
             const json = await response.json();
             setLoading(false)
             if(!json.success){
+                setSuccess(false);
                 navigate('/success');
             }
             else{
