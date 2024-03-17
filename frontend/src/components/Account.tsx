@@ -1,9 +1,9 @@
 import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import chip from '../assets/chip.png';
+import logo from '../assets/logo.png';
 import '../css/Account.css';
 import Navbar from './Navbar';
-import logo from '../assets/logo.png'
-import chip from '../assets/chip.png'
 
 export default function Account() {
   const capitalizeWords = (sentence:string) => {
@@ -11,11 +11,8 @@ export default function Account() {
       return char.toUpperCase();
     });
 }
-  const initialAcc = {
-    accNumber: "000000000000",
-  }
   const [loading, setLoading] = useState(true);
-  const [account, setAccount] = useState(initialAcc);
+  const [account, setAccount] = useState(localStorage.getItem('accNumber') || "");
   const navigate = useNavigate()
   const username = capitalizeWords(localStorage.getItem('username') || "");
  
@@ -30,7 +27,8 @@ export default function Account() {
     }).then(async (response) => {
       const data = await response.json();
       if (data.success) {
-        setAccount(data.account)
+        setAccount(data.account.accNumber)
+        localStorage.setItem("accNumber", data.account.accNumber);
       }
       setLoading(false);
       if (!data.success) {
@@ -54,7 +52,7 @@ export default function Account() {
             <div className="card-details display-flex justify-between align-end">
               <div className="name-number">
                 <h6 className="card-number card-label color-white">Card Number</h6>
-                <h5 className="card-number card-item color-white">{`${account.accNumber.substring(0, 4)} ${account?.accNumber.substring(4, 8)} ${account?.accNumber.substring(8, 12)} ${account.accNumber.substring(12, 16)}`}</h5>
+                <h5 className="card-number card-item color-white">{`${account.substring(0, 4)} ${account.substring(4, 8)} ${account.substring(8, 12)} ${account.substring(12, 16)}`}</h5>
                 <h5 className="card-name card-item color-white">{`${username && username[0].toUpperCase()}${username?.substring(1)}`}</h5>
               </div>
               <div className="validity">
