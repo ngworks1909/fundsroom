@@ -35,7 +35,7 @@ export default function Account() {
         navigate('/createAccount');
       }
     })
-  }, [navigate])
+  }, [])
   return (
     <div>
       <Navbar />
