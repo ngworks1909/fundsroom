@@ -1,8 +1,8 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
+import { useRecoilValue, useSetRecoilState } from 'recoil';
 import Alert from '../components/Alert';
 import '../css/Login.css';
-import { useRecoilValue, useSetRecoilState } from 'recoil';
 import { LogState } from '../states/LogState';
 import { UserState } from '../states/UserState';
 
@@ -13,7 +13,7 @@ export default function Login() {
   const setLogin = useSetRecoilState(LogState);
   const loading = useRecoilValue(UserState);
   const setLoading = useSetRecoilState(UserState);
-  const handleLogin = async(e) => {
+  const handleLogin = async(e:any) => {
       e.preventDefault();
       setLoading(true);
       const email = e.target[0].value;

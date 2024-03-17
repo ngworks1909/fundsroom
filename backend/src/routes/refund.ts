@@ -29,9 +29,14 @@ refundRouter.get("/fetchRefunds", async(c) => {
             }
         })
 
-        const refunds = await prisma.account.findMany({
+        const refunds = await prisma.refund.findMany({
             where: {
                 accId: accId
+            },
+            select:{
+                id:true,
+                amount:true,
+                status:true
             }
         })
         success = true;

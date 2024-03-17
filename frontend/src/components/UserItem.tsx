@@ -1,14 +1,20 @@
-import React from 'react'
-import '../css/UserItem.css'
-import {useNavigate} from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { useSetRecoilState } from 'recoil';
+import '../css/UserItem.css';
 import { PayState } from '../states/PayState';
+import { User } from './UserList';
 
 
-export default function UserItem({user}) {
+interface UserProps{
+    key: number,
+    user: User
+}
+
+export default function UserItem(props: UserProps ) {
+  const user = props.user;
   const navigate = useNavigate();
   const setPay = useSetRecoilState(PayState)
-  const handlePay = (userId) => {
+  const handlePay = (userId: string) => {
     setPay(userId);
     navigate("/pay")
   }

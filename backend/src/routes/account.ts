@@ -1,7 +1,7 @@
-import { Hono } from "hono";
-import { fetchUser } from "../middlewares/fetchUser";
 import { PrismaClient } from "@prisma/client/edge";
 import { withAccelerate } from "@prisma/extension-accelerate";
+import { Hono } from "hono";
+import { fetchUser } from "../middlewares/fetchUser";
 
 export const accountRouter = new Hono<{
     Bindings:{
@@ -62,6 +62,12 @@ accountRouter.get('/fetchAccount', async(c) => {
     const account = await prisma.account.findFirst({
         where: {
             userId: userId
+        },
+        select: {
+            accNumber: true,
+            amount: true,
+            cvv: true,
+            pin: true
         }
     })
     let success = false;

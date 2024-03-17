@@ -1,11 +1,11 @@
-import React, { useState } from 'react'
-import Navbar from './Navbar'
-import '../css/Pay.css'
-import {useNavigate} from 'react-router-dom'
+import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { useRecoilValue, useSetRecoilState } from 'recoil';
-import { PayState } from '../states/PayState';
+import '../css/Pay.css';
 import { AmountState } from '../states/AmountState';
+import { PayState } from '../states/PayState';
 import { SuccessState } from '../states/SuccessState';
+import Navbar from './Navbar';
 
 export default function Pin() {
     const navigate = useNavigate();
@@ -15,7 +15,7 @@ export default function Pin() {
     const setSuccess = useSetRecoilState(SuccessState);
     const [loading, setLoading] = useState(false)
     
-    const handlePay = async(e) => {
+    const handlePay = async(e: React.MouseEvent) => {
         e.preventDefault();
         setLoading(true);
         try {
@@ -23,7 +23,7 @@ export default function Pin() {
               method: "PUT",
               headers: {
                   "Content-Type": "application/json",
-                  "auth-token": localStorage.getItem("token")
+                  "auth-token": localStorage.getItem("token") || ""
                 },
               body: JSON.stringify({
                 "receiverUserId":`${receiver}`,

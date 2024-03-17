@@ -1,9 +1,15 @@
-import React, {useEffect, useState} from 'react'
-import Navbar from './Navbar'
+import { useEffect, useState } from 'react';
+import '../css/Refunds.css';
+import Navbar from './Navbar';
 import RefundItem from './RefundItem';
-import '../css/Refunds.css'
 
+export interface Refund{
+    id: string,
+    amount: number | string,
+    status: any
+  }
 export default function Refunds() {
+
   const [refunds, setRefunds] = useState([]);
   const [loading, setLoading] = useState(true);
   useEffect(() => {
@@ -11,7 +17,7 @@ export default function Refunds() {
              method: "GET",
              headers: {
                  "Content-Type": "application/json",
-                 "auth-token":localStorage.getItem('token')
+                 "auth-token":localStorage.getItem('token') || ""
                }
      }).then(async(response) => {
        const json = await response.json();
@@ -28,7 +34,7 @@ export default function Refunds() {
       <div className="refunds display-flex flex-column">
         {!loading && refunds &&  <div className='display-flex flex-column gap-10'>
           <RefundItem key={"id"} id = {"ID"} amount={"AMOUNT"} status={"STATUS"}/>
-          {refunds.map((refund, index) => {
+          {refunds.map((refund:Refund, index) => {
            return <RefundItem key={index} id = {refund.id} amount={refund.amount} status={refund.status}/>
         })}
           </div>}

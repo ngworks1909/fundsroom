@@ -1,8 +1,8 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
+import { useRecoilValue, useSetRecoilState } from 'recoil';
 import Alert from '../components/Alert';
 import '../css/Login.css';
-import { useRecoilValue, useSetRecoilState } from 'recoil';
 import { UserState } from '../states/UserState';
 
 
@@ -15,7 +15,7 @@ export default function Register() {
 
 
   
-  const handleRegister= async (e) =>{
+  const handleRegister= async (e: any) =>{
         e.preventDefault();
         setLoading(true);
         const username = e.target[0].value;

@@ -1,20 +1,20 @@
-import React, { useState } from 'react'
-import Navbar from './Navbar'
-import '../css/Pay.css'
-import {useNavigate} from 'react-router-dom'
+import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+import '../css/Pay.css';
+import Navbar from './Navbar';
 
 export default function CreateAccount() {
     const navigate = useNavigate();
     const [pin, setPin] = useState('');
     
-    const handlePay = async(e) => {
-        e.preventDefault();
+    const handlePay = async(e: React.MouseEvent) => {
+        e.preventDefault();    
         try {
             const response = await fetch(`https://backend.nithin-kanduru1908.workers.dev/api/account/createAccount`, {
               method: "POST",
               headers: {
                   "Content-Type": "application/json",
-                  "auth-token": localStorage.getItem("token")
+                  "auth-token": localStorage.getItem("token") || ""
                 },
               body: JSON.stringify({
                 "pin":`${pin}`,
