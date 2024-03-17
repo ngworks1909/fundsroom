@@ -101,7 +101,7 @@ tsxnRouter.use(fetchUser);
 //     }
 // })
 
-tsxnRouter.put("/makePayment", async (c, next) => {
+tsxnRouter.put("/makePayment",fetchUser, async (c) => {
   const body = await c.req.json();
   const senderUserId = c.res.headers.get("id") || "";
   const receiverUserId = body.receiverUserId;

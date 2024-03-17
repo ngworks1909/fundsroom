@@ -13,7 +13,7 @@ export const refundRouter = new Hono<{
 
 refundRouter.use(fetchUser)
 
-refundRouter.get("/fetchRefunds", async(c) => {
+refundRouter.get("/fetchRefunds",fetchUser, async(c) => {
     const senderUserId = c.res.headers.get("id") || "";
     const prisma = new PrismaClient({
         datasourceUrl: c.env.DATABASE_URL

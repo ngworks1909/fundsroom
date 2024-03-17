@@ -53,7 +53,7 @@ accountRouter.post('/createAccount', async(c) => {
     }
 });
 
-accountRouter.get('/fetchAccount', async(c) => {
+accountRouter.get('/fetchAccount',fetchUser, async(c) => {
     const userId = c.res.headers.get("id") || "";
     const prisma = new PrismaClient({
         datasourceUrl: c.env.DATABASE_URL
@@ -78,7 +78,7 @@ accountRouter.get('/fetchAccount', async(c) => {
 
 })
 
-accountRouter.get('/fetchBalance', async(c) => {
+accountRouter.get('/fetchBalance', fetchUser,async(c) => {
     const userId = c.res.headers.get("id") || "";
     const prisma = new PrismaClient({
         datasourceUrl: c.env.DATABASE_URL
