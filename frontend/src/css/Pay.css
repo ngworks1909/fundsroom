@@ -2,6 +2,8 @@
 .pay{
     height: calc(100dvh - 60px);
     background-color: #202c33;
+    position: relative;
+    top: 60px;
 }
 .pay-block{
     height: 400px;
