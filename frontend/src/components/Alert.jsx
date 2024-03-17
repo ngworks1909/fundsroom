@@ -1,11 +1,7 @@
+import React from 'react'
 import '../css/Alert.css'
 
-interface Properties{
-    type: string,
-    message: string
-}
-
-export default function Alert(props: Properties) {
+export default function Alert(props) {
   return (
     <div className={`alert alert-${props.type}`} role="alert">
        {props.message}

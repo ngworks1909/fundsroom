@@ -1,4 +1,4 @@
-import { useEffect } from 'react'
+import React, { useEffect } from 'react'
 import UserList from '../components/UserList'
 import Navbar from '../components/Navbar'
 import {useNavigate} from 'react-router-dom'
@@ -11,7 +11,7 @@ export default function Home() {
               method: "GET",
               headers: {
                   "Content-Type": "application/json",
-                  "auth-token":localStorage.getItem('token') || ""
+                  "auth-token":localStorage.getItem('token')
                 }
       }).then(async(response) => {
         const json = await response.json();

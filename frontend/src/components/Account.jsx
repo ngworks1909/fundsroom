@@ -1,41 +1,36 @@
-import { useEffect, useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import React, { useEffect, useState } from 'react'
+import Navbar from './Navbar';
+import '../css/Account.css'
+import {useNavigate} from 'react-router-dom';
 import chip from '../assets/chip.png';
 import logo from '../assets/logo.png';
-import '../css/Account.css';
-import Navbar from './Navbar';
-
 export default function Account() {
-  const capitalizeWords = (sentence:string) => {
-    return sentence.replace(/\b\w/g, function(char) {
-      return char.toUpperCase();
-    });
-}
+  
+  
   const [loading, setLoading] = useState(true);
   const [account, setAccount] = useState(localStorage.getItem('accNumber') || "");
+  const username = localStorage.getItem('username');
   const navigate = useNavigate()
-  const username = capitalizeWords(localStorage.getItem('username') || "");
- 
   // 
   useEffect(() => {
     fetch(`https://backend.nithin-kanduru1908.workers.dev/api/account/fetchAccount`, {
-      method: "GET",
-      headers: {
-        "Content-Type": "application/json",
-        "auth-token": localStorage.getItem("token") || ""
-      }
-    }).then(async (response) => {
-      const data = await response.json();
-      if (data.success) {
-        setAccount(data.account.accNumber)
-        localStorage.setItem("accNumber", data.account.accNumber);
-      }
-      setLoading(false);
-      if (!data.success) {
-        navigate('/createAccount');
-      }
-    })
-  }, [])
+              method: "GET",
+              headers: {
+                  "Content-Type": "application/json",
+                  "auth-token": localStorage.getItem("token")
+                }
+        }).then(async(response) => {
+            const data = await response.json();
+            if(data.success){
+                setAccount(data.account.accNumber)
+                localStorage.setItem("accNumber", data.account.accNumber);
+            }
+            setLoading(false);
+            if(!data.success){
+              navigate('/createAccount');
+            }
+        })
+  }, [navigate])
   return (
     <div>
       <Navbar />

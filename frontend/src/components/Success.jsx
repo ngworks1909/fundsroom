@@ -1,7 +1,7 @@
-import { useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';
+import React, { useEffect } from 'react';
+import {useNavigate} from 'react-router-dom'
+import '../css/Success.css'
 import { useRecoilValue } from 'recoil';
-import '../css/Success.css';
 import { SuccessState } from '../states/SuccessState';
 
 export default function Success() {

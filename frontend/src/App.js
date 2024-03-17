@@ -1,18 +1,18 @@
 import './App.css';
 // import Navbar from './components/Navbar';
 import { useEffect, useState } from 'react';
-import { Route, BrowserRouter as Router, Routes } from 'react-router-dom';
-import { useRecoilValue, useSetRecoilState } from 'recoil';
-import Account from './components/Account';
-import CreateAccount from './components/CreateAccount';
-import Pay from './components/Pay';
-import Pin from './components/Pin';
-import Refunds from './components/Refunds';
-import Success from './components/Success';
+import {BrowserRouter as Router, Route,Routes} from 'react-router-dom';
 import Home from './pages/Home';
 import Login from './pages/Login';
 import Register from './pages/Register';
+import { useRecoilValue, useSetRecoilState } from 'recoil';
 import { LogState } from './states/LogState';
+import Refunds from './components/Refunds';
+import Account from './components/Account';
+import Pay from './components/Pay';
+import Pin from './components/Pin';
+import Success from './components/Success';
+import CreateAccount from './components/CreateAccount';
 
 
 

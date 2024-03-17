@@ -1,8 +1,8 @@
-import { useState } from 'react';
+import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import { useRecoilValue, useSetRecoilState } from 'recoil';
 import Alert from '../components/Alert';
 import '../css/Login.css';
+import { useRecoilValue, useSetRecoilState } from 'recoil';
 import { UserState } from '../states/UserState';
 
 
@@ -15,7 +15,7 @@ export default function Register() {
 
 
   
-  const handleRegister= async (e: any) =>{
+  const handleRegister= async (e) =>{
         e.preventDefault();
         setLoading(true);
         const username = e.target[0].value;
@@ -48,8 +48,8 @@ export default function Register() {
   }
   return (
     <>
-      <>
-     {err && <Alert type={'danger'} message={msg}/>}
+     {loading ? <span>Loading...</span> : <>
+     {err && <Alert type={'danger'} message={msg}/>} 
      <div className="container-2 display-flex align-center justify-center">
        <div className="login display-flex align-center flex-column">
            <h2 className='login-h2'>Register</h2>
@@ -70,12 +70,12 @@ export default function Register() {
                   <input type="password"  className="form-control" id="floatingMobile" placeholder="Mobile" minLength={10} maxLength={10} required/>
                   <label  htmlFor="floatingPassword">Mobile</label>
                 </div>
-                <input type="submit" className="btn btn-primary signup-submit" disabled = {loading} value={"Register"}/>
+                <input type="submit" className="btn btn-primary signup-submit" value={"Register"}/>
            </form>
          
-           {!loading && <span className='not-user display-flex'>Already a user?<Link to="/login">Login</Link></span>}
+           <span className='not-user display-flex'>Already a user?<Link to="/login">Login</Link></span>
        </div>
-     </div></>
+     </div></>}
     </>
   )
 }
