@@ -48,8 +48,8 @@ export default function Register() {
   }
   return (
     <>
-     {loading ? <span>Loading...</span> : <>
-     {err && <Alert type={'danger'} message={msg}/>} 
+      <>
+     {err && <Alert type={'danger'} message={msg}/>}
      <div className="container-2 display-flex align-center justify-center">
        <div className="login display-flex align-center flex-column">
            <h2 className='login-h2'>Register</h2>
@@ -70,12 +70,12 @@ export default function Register() {
                   <input type="password"  className="form-control" id="floatingMobile" placeholder="Mobile" minLength={10} maxLength={10} required/>
                   <label  htmlFor="floatingPassword">Mobile</label>
                 </div>
-                <input type="submit" className="btn btn-primary signup-submit" value={"Register"}/>
+                <input type="submit" className="btn btn-primary signup-submit" disabled = {loading} value={"Register"}/>
            </form>
          
-           <span className='not-user display-flex'>Already a user?<Link to="/login">Login</Link></span>
+           {!loading && <span className='not-user display-flex'>Already a user?<Link to="/login">Login</Link></span>}
        </div>
-     </div></>}
+     </div></>
     </>
   )
 }

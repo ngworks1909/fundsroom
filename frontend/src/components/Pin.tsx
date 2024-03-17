@@ -31,36 +31,35 @@ export default function Pin() {
               }),
       });
             const json = await response.json();
-            setLoading(false)
             if(!json.success){
                 setSuccess(false);
+                setLoading(false)
                 navigate('/success');
             }
             else{
                 setSuccess(true);
+                setLoading(false)
                 navigate('/success');
             }
         } catch (error) {
-            setSuccess(false)
+            setSuccess(false);
+            setLoading(false);
             navigate('/success');
         }
     }
   return (
     <div className='pay-wrapper'>
         <Navbar/>
-        {!loading && <div className="pay display-flex align-center justify-center">
+        <div className="pay display-flex align-center justify-center">
             <div className="pay-block display-flex justify-center">
                 <div className="pay-container display-flex flex-column gap-1">
                 <input type="text" name="amount" className='tsxnamount' maxLength={4} minLength={4} value={pin} onChange={(e) => {
                     e.preventDefault();
                     setPin(e.target.value);
                 }} placeholder='Pin' id="tsxnPin" />
-                <button className='pay-pay-button' onClick={handlePay}>Pay</button>
+                <button className={`pay-pay-button ${loading && 'pay-opacity'}`} onClick={handlePay}>Pay</button>
                 </div>
             </div>
-        </div>}
-        <div className="display-flex align-center-justify-center">
-           {loading && <span>Please wait...</span>}
         </div>
     </div>
   )
