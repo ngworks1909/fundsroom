@@ -5,6 +5,7 @@
     overflow-y: scroll;
 }
 .refunds-wrapper{
+    background-color: #e3f2fd;
     height: calc(100dvh - 60px);
     position: relative;
     top: 60px;

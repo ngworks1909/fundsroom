@@ -36,7 +36,7 @@ export default function UserList() {
     <div className="user-list-wrapper">
         <div className='user-list display-flex flex-column'>
         <TypeAnimation sequence={[`Hello ${username} !!!`,2000,""]} speed={30} wrapper="h2" repeat={Infinity} />
-        <div className="user-list-seperation display-flex flex-column gap-10">
+        <div className={`user-list-seperation display-flex flex-column gap-10`}>
         <h5>Pay Friends</h5>
         {loading && <span>Loading...</span>}
         {!loading && userlist.map((user: User, index) => {

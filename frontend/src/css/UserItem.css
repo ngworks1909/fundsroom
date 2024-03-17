@@ -1,5 +1,5 @@
 .user-item{
-    background-color: rgb(223, 220, 220);
+    background-color: rgba(56, 56, 56, 0.232);
     padding: 10px 20px;
     margin: 0 auto;
     width: 100%;
@@ -36,4 +36,8 @@
     border-radius: 25px;
     box-shadow: 0 8px 24px rgba(0,0,0,.5);
     font-weight: 500;
+}
+.pay-user-button:hover{
+    transform: scale(1.03);
+    transition: .2s ease-in-out;
 }

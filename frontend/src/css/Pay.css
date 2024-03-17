@@ -1,7 +1,7 @@
 
 .pay{
     height: calc(100dvh - 60px);
-    background-color: #202c33;
+    background-color: #e3f2fd;
     position: relative;
     top: 60px;
 }

@@ -1,16 +1,50 @@
 .account{
-    background-color: #202c33;
+    background-color: #e3f2fd;
     height: calc(100dvh - 60px);
     position: relative;
     top: 60px;
 }
 .card{
-    height: 250px;
     width: 400px;
-    background-color: white;
-    box-shadow: 0 8px 24px rgba(0,0,0,.5);
+    background-image: url("../assets/bg.png");
+    background-size: cover;
+    box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+    padding: 25px;
+    border-radius: 28px;
+    transition: .2s ease-in-out;
 }
 .card-holder{
     font-size: 20px;
     font-weight: 500;
+}
+.master-logo{
+    width: 48px;
+}
+.chip-logo{
+    width: 60px;
+}
+.master-card-text{
+    color: #fff;
+    margin: 0;
+    font-size: 16px;
+    font-weight: 400;
+}
+.card-header{
+    padding: 0;
+}
+.card-details{
+    margin-top: 40px;
+}
+.carditem{
+    font-size: 16px;
+    font-weight: 400;
+}
+.card-label{
+    font-size: 12px;
+    font-weight: 400;
+}
+.card-number{
+    margin-top: 4px;
+    font-size: 18px;
+    letter-spacing: 1px;
 }
