@@ -65,9 +65,6 @@ accountRouter.get('/fetchAccount', async(c) => {
         },
         select: {
             accNumber: true,
-            amount: true,
-            cvv: true,
-            pin: true
         }
     })
     let success = false;

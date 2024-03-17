@@ -13,9 +13,6 @@ export default function Account() {
 }
   const initialAcc = {
     accNumber: "000000000000",
-    cvv: "000",
-    pin: "0000",
-    amount: 0
   }
   const [loading, setLoading] = useState(true);
   const [account, setAccount] = useState(initialAcc);
@@ -47,13 +44,6 @@ export default function Account() {
       <div className="account display-flex align-center justify-center">
         <div className={`card display-flex flex-column ${loading && 'align-center'}`}>
           {loading ? <span className='color-white'>Loading...</span> : <div className='display-flex flex-column'>
-            {/* <span className='card-holder'>{`${username && username[0].toUpperCase()}${username?.substring(1)}`}</span>
-            <span className='acc-number'>{`${account.accNumber.substring(0, 4)} ${account?.accNumber.substring(4, 8)} ${account?.accNumber.substring(8, 12)} ${account.accNumber.substring(12, 16)}`}</span>
-            <div className="cvv-pin display-flex align-center">
-              <span className='cvv'>{`CVV ${account.cvv}`}</span>
-              <span className='pin'>{`PIN ${account.pin}`}</span>
-            </div>
-            <span className='acc-amount'>{`Amount: ${account.amount}`}</span> */}
             <div className="card-header display-flex align-center justify-between">
             <span className='card-logo display-flex align-center justify-center gap-10'>
               <img src={logo} alt="Logo" className='master-logo' />
