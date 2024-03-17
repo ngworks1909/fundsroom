@@ -11,7 +11,6 @@
     box-shadow: 0 5px 10px rgba(0,0,0,0.1);
     padding: 25px;
     border-radius: 28px;
-    transition: .2s ease-in-out;
 }
 .card-holder{
     font-size: 20px;
